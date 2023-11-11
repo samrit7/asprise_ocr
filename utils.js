@@ -12,13 +12,16 @@
  * @property {string} options.filename - The original filename for proper identification.
  * @property {string|null} options.contentType - The content type, set to null for automatic detection.
  */
-export default function createFileOptions(file) {
+function createFileOptions(file) {
     return {
-      value: file?.buffer,  // Extracting the file buffer as the primary content
+      value: file && file.buffer,  // Extracting the file buffer as the primary content
       options: {
-        filename: file?.originalname,  // Retaining the original filename for proper identification
+        filename: file && file.originalname,  // Retaining the original filename for proper identification
         contentType: null,  // Explicitly setting content type to null for automated detection
       },
     };
   }
+  
+  module.exports = createFileOptions;
+  
   
