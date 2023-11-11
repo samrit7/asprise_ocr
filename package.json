@@ -1,6 +1,6 @@
 {
   "name": "asprise_ocr_request",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "You can use this package to call the asprise ocr receipt request for extract the receipt data into a json object.",
   "main": "index.js",
   "scripts": {
