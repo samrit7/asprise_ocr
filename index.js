@@ -6,10 +6,9 @@
  */
 
 // External Dependencies
-const post = require('./dependencies') // HTTP request library for making OCR API requests
+const request = require('request') // HTTP request library for making OCR API requests
 
 // Internal Dependencies
-const config = require('./config');  // Configuration module for API key, recognizer type, and endpoint
 const createFileOptions = require('./utils');  // Utility module for creating file options
 
 /**
@@ -21,14 +20,19 @@ const createFileOptions = require('./utils');  // Utility module for creating fi
  * @returns {Promise<Object>} A Promise that resolves with the OCR results in JSON format.
  * @rejects {Error} If an error occurs during HTTP request or JSON parsing.
  */
-async function compare(file) {
+async function compare(
+  endpoint='http://ocr.asprise.com/api/v1/receipt',
+  apiKey,
+  recognizer,
+  file,
+  ) {
   return new Promise((resolve, reject) => {
     // Constructing and sending a POST request to the OCR service endpoint
-    post({
-      url: config.endpoint,  // OCR service endpoint URL
+    request.post({
+      url: endpoint,  // OCR service endpoint URL
       formData: {
-        api_key: config.apiKey,  // Authentication API key
-        recognizer: config.recognizer,  // Type of OCR recognizer
+        api_key: apiKey,  // Authentication API key
+        recognizer: recognizer,  // Type of OCR recognizer
         file: createFileOptions(file),  // Generating file options using the utility function
       },
     }, async function (error, response, body) {
