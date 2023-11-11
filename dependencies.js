@@ -5,7 +5,10 @@ var request = require('request');
 // Exporting the 'post' method as the default export for this module.
 // This means that when other files import this module, they will
 // get the 'post' method by default.
-export default request.post;
+module.exports = {
+    post: request.post
+  };
+  
 
 // Note: It's assumed that the 'request' module has been previously
 // installed using a package manager like npm, and this code is likely
