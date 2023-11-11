@@ -21,7 +21,7 @@ const createFileOptions = require('./utils');  // Utility module for creating fi
  * @returns {Promise<Object>} A Promise that resolves with the OCR results in JSON format.
  * @rejects {Error} If an error occurs during HTTP request or JSON parsing.
  */
-export async function compare(file) {
+async function compare(file) {
   return new Promise((resolve, reject) => {
     // Constructing and sending a POST request to the OCR service endpoint
     post({
@@ -50,3 +50,5 @@ export async function compare(file) {
     });
   });
 }
+
+module.exports = { compare };
