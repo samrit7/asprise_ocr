@@ -6,7 +6,7 @@
  */
 
 // External Dependencies
-import request from 'request';  // HTTP request library for making OCR API requests
+const post = require('./dependencies') // HTTP request library for making OCR API requests
 
 // Internal Dependencies
 import { config } from './config';  // Configuration module for API key, recognizer type, and endpoint
@@ -24,7 +24,7 @@ import { createFileOptions } from './utils';  // Utility module for creating fil
 export async function compare(file) {
   return new Promise((resolve, reject) => {
     // Constructing and sending a POST request to the OCR service endpoint
-    request.post({
+    post({
       url: config.endpoint,  // OCR service endpoint URL
       formData: {
         api_key: config.apiKey,  // Authentication API key
