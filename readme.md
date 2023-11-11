@@ -31,7 +31,7 @@ To utilize the OCR module for text extraction, follow these steps:
 1. Import the OCR module in your code:
 
     ```javascript
-    import { compare } from './ocr';
+    import { compare } from 'ocr';
     ```
 
 2. Call the `compare` function, passing the image file as an argument. The `file` variable is expected to be an object with the following properties:
