@@ -9,8 +9,8 @@
 const post = require('./dependencies') // HTTP request library for making OCR API requests
 
 // Internal Dependencies
-import { config } from './config';  // Configuration module for API key, recognizer type, and endpoint
-import { createFileOptions } from './utils';  // Utility module for creating file options
+const config = require('./config');  // Configuration module for API key, recognizer type, and endpoint
+const createFileOptions = require('./utils');  // Utility module for creating file options
 
 /**
  * Asynchronous function for comparing text extracted from an image using OCR.

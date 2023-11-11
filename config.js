@@ -10,7 +10,7 @@
  * @property {string} config.recognizer - The OCR recognizer type, defaulting to 'auto' if not specified in the environment variable 'RECEIPT_OCR_RECOGNIZER'.
  *                                        If running in development, it uses 'auto' by default, and in live, it uses the live API key; in testing, it defaults to 'TEST'.
  */
-export const config = {
+export default config = {
     endpoint: process.env.RECEIPT_OCR_END_POINT,
     apiKey: process.env.HOST !== 'DEVELOPMENT'
       ? process.env.RECEIPT_OCR_LIVE_API_KEY
